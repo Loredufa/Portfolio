@@ -8,15 +8,28 @@
       href="https://fonts.googleapis.com/css2?display=swap&amp;family=Manrope%3Awght%40400%3B500%3B700%3B800&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900"
     />
 
-    <title>Stitch Design</title>
-    <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
+  <title>Stitch Design</title>
+  <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
 
-    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-    <style>
-      html {
-        scroll-behavior: smooth;
-      }
-    </style>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <style>
+    .reveal {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+    }
+    .reveal-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .video-hover {
+      transition: transform 0.5s ease-out;
+    }
+    .video-hover:hover {
+      transform: scale(1.05);
+    }
+  </style>
+
   </head>
   <body>
     <div class="relative flex size-full min-h-screen flex-col bg-[#141a1f] dark group/design-root overflow-x-hidden" style='font-family: Manrope, "Noto Sans", sans-serif;'>
@@ -54,7 +67,7 @@
         <div class="px-40 flex flex-1 justify-center py-5">
           <div class="layout-content-container flex flex-col max-w-[960px] flex-1">
             <div
-              class="relative flex items-center justify-center bg-[#dce8f3] bg-cover bg-center aspect-video"
+              class="relative flex items-center justify-center bg-[#dce8f3] bg-cover bg-center aspect-video video-hover reveal"
               style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCkzgozgAGOwETPl0s_vCBh3R32_f_5yk_K_b5pwQE0OGPmCbaWW_Dgwp8YLcghFhOGaXDG2GRcZMexK5-O-gejT9kZVSpQO4p3kG4jBhaVTJpdCssO3iWKSIJz5p67KrT4xFZls3wbAAIU2hFYGpOP0X-zhiltYf5gg2Y6lNyAbsRtFdtEG86yvzvPaeozEhBKU2YF8kj-1fygEsgha30tmi4GAo3Mj_eXAhAyPLsuP6Lp93kv5lqPd262vyz8Ymdy4uDJ2V58jPA");'
             >
               <button class="flex shrink-0 items-center justify-center rounded-full size-16 bg-black/40 text-white">
@@ -67,11 +80,12 @@
                 </div>
               </button>
             </div>
-            <div id="projects" class="flex flex-wrap justify-between gap-3 p-4"><p class="text-white tracking-light text-[32px] font-bold leading-tight min-w-72">My Projects</p></div>
+            <div class="flex flex-wrap justify-between gap-3 p-4 reveal"><p class="text-white tracking-light text-[32px] font-bold leading-tight min-w-72">My Projects</p></div>
+
             <div class="grid grid-cols-[repeat(auto-fit,minmax(158px,1fr))] gap-3 p-4">
-              <div class="flex flex-col gap-3 pb-3">
+              <div class="flex flex-col gap-3 pb-3 reveal">
                 <div
-                  class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-xl"
+                  class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-xl video-hover"
                   style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAnVKlpHWK50HNwuJ5we5Yz31lneTIKxUEo8molzK8VQYfSynZhZgpEVUerlqhsqC9c0Fk_qP8TIItnpb_j9Kfv72fOPHRwOUzHNcaPUuoGcoSaSuR5RD0ld3K0qYQLxkNJY9Fded-5xCN5nJH4cYLxEFzFrxpNi1ZMRgvUxnvA08DDNN49et9gW5XXLPs_hsT2loRyFOxs97k2-JvD0OgRePuFP14mlGBbZDmbMZlF1YPjylg-WagyGTz99KtASPbMdBULuu-MYlA");'
                 ></div>
                 <div>
@@ -79,9 +93,9 @@
                   <p class="text-[#9daebe] text-sm font-normal leading-normal">A short film exploring themes of isolation and connection.</p>
                 </div>
               </div>
-              <div class="flex flex-col gap-3 pb-3">
+              <div class="flex flex-col gap-3 pb-3 reveal">
                 <div
-                  class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-xl"
+                  class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-xl video-hover"
                   style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuC3bBEqHnPhRcwqpvS5e1C527L6NcMvThZVyVBY4BZjUsw4ne3M5kX68P08yn1K3STDJHKIge5cXoNJnihbzY_s__kPZCGqLzHuD3CPKYBRipGiOW-e2U97kvxY8NFf0uXNxyqTL_C59DX__p1rQ-RqWyE32d1JhronkS4Cosbsh4dXDDLpLTLrspvmZUQ4FtliA0xOpJW8dEe3pw-nC_Klj1koSM62m71xsAN0uf2E65zRMThHuZIYHMYumrF3ipZZNLQLv9dctzw");'
                 ></div>
                 <div>
@@ -89,9 +103,9 @@
                   <p class="text-[#9daebe] text-sm font-normal leading-normal">An interactive installation blending art and technology.</p>
                 </div>
               </div>
-              <div class="flex flex-col gap-3 pb-3">
+              <div class="flex flex-col gap-3 pb-3 reveal">
                 <div
-                  class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-xl"
+                  class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-xl video-hover"
                   style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuA2bCnO-iNWPk7KVb7CH97OWwC2Jaq-4HJIxtgxG6ApvoaR55xBrJulhQto4_uGe3zc_4oyYQxCXyjC0JmJupvS3E8hCDMXP6DhJ1w7FtsHkmy2dLA_XI6FqDN1fJsaHAZrOiCfDxaMdn7f5ahmZwVswcnkbm7fX9Y43V_i7ke5egfVh1YMgDCLZ5-57j2GgHi4VrPeaGpFVgO4-uVA0qIkw4HzfPOIs3rTGIhsiDgOuofTK-59xBy3VFDcR9uyeji3inAiguFcjLE");'
                 ></div>
                 <div>
@@ -100,13 +114,15 @@
                 </div>
               </div>
             </div>
-            <h2 id="about" class="text-white text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">About Me</h2>
-            <p class="text-white text-base font-normal leading-normal pb-3 pt-1 px-4">
+
+            <h2 class="text-white text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5 reveal">About Me</h2>
+            <p class="text-white text-base font-normal leading-normal pb-3 pt-1 px-4 reveal">
+
               I am a filmmaker and artist passionate about creating impactful visual experiences. My work spans various mediums, from short films to interactive installations,
               always aiming to tell compelling stories and evoke emotions.
             </p>
-            <h2 class="text-white text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">Technologies</h2>
-            <div class="flex gap-3 p-3 flex-wrap pr-4">
+            <h2 class="text-white text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5 reveal">Technologies</h2>
+            <div class="flex gap-3 p-3 flex-wrap pr-4 reveal">
               <div class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-full bg-[#2b3640] pl-4 pr-4">
                 <p class="text-white text-sm font-medium leading-normal">Video Editing</p>
               </div>
@@ -123,8 +139,8 @@
                 <p class="text-white text-sm font-medium leading-normal">Documentary Filmmaking</p>
               </div>
             </div>
-            <h2 class="text-white text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">Soft Skills</h2>
-            <div class="flex gap-3 p-3 flex-wrap pr-4">
+            <h2 class="text-white text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5 reveal">Soft Skills</h2>
+            <div class="flex gap-3 p-3 flex-wrap pr-4 reveal">
               <div class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-full bg-[#2b3640] pl-4 pr-4">
                 <p class="text-white text-sm font-medium leading-normal">Storytelling</p>
               </div>
@@ -141,20 +157,13 @@
                 <p class="text-white text-sm font-medium leading-normal">Adaptability</p>
               </div>
             </div>
-            <h2 id="contact" class="text-white text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">Contact</h2>
-            <p class="text-white text-base font-normal leading-normal pb-3 pt-1 px-4">
-              Get in touch to discuss potential collaborations or projects. You
-              can reach me at
-              <span id="emailText" class="font-medium">email@example.com</span>
-              <button
-                id="copyEmailBtn"
-                class="ml-2 rounded bg-[#2b3640] px-2 py-1 text-sm text-white"
-              >
-                Copy
-              </button>
-              or connect on social media.
+
+            <h2 class="text-white text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5 reveal">Contact</h2>
+            <p class="text-white text-base font-normal leading-normal pb-3 pt-1 px-4 reveal">
+
+              Get in touch to discuss potential collaborations or projects. You can reach me at email@example.com or connect on social media.
             </p>
-            <div class="@container">
+            <div class="@container reveal">
               <div class="gap-2 px-4 flex flex-wrap justify-start">
                 <div class="flex flex-col items-center gap-2 bg-[#141a1f] py-2.5 text-center w-20">
                   <div class="rounded-full bg-[#2b3640] p-2.5">
@@ -186,18 +195,20 @@
         </div>
       </div>
     </div>
-    <script>
-      const emailBtn = document.getElementById('copyEmailBtn');
-      emailBtn.addEventListener('click', () => {
-        const email = document
-          .getElementById('emailText')
-          .textContent.trim();
-        navigator.clipboard.writeText(email);
-        emailBtn.textContent = 'Copied!';
-        setTimeout(() => {
-          emailBtn.textContent = 'Copy';
-        }, 2000);
-      });
-    </script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('reveal-visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1 });
+
+      document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    });
+  </script>
+
   </body>
 </html>
