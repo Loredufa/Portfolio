@@ -53,14 +53,14 @@
           </div>
           <div class="flex flex-1 justify-end gap-8">
             <div class="flex items-center gap-9">
-              <a class="text-white text-sm font-medium leading-normal" href="#projects">Projects</a>
-              <a class="text-white text-sm font-medium leading-normal" href="#about">About</a>
-              <a class="text-white text-sm font-medium leading-normal" href="#contact">Contact</a>
+              <a data-i18n="navProjects" class="text-white text-sm font-medium leading-normal" href="#">Projects</a>
+              <a data-i18n="navAbout" class="text-white text-sm font-medium leading-normal" href="#">About</a>
+              <a data-i18n="navContact" class="text-white text-sm font-medium leading-normal" href="#">Contact</a>
             </div>
-            <button
+            <button id="language-btn"
               class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-4 bg-[#2b3640] text-white text-sm font-bold leading-normal tracking-[0.015em]"
             >
-              <span class="truncate">Language: EN</span>
+              <span data-i18n="languageButton" class="truncate">Language: EN</span>
             </button>
           </div>
         </header>
@@ -80,7 +80,8 @@
                 </div>
               </button>
             </div>
-            <div class="flex flex-wrap justify-between gap-3 p-4 reveal"><p class="text-white tracking-light text-[32px] font-bold leading-tight min-w-72">My Projects</p></div>
+
+            <div class="flex flex-wrap justify-between gap-3 p-4"><p class="text-white tracking-light text-[32px] font-bold leading-tight min-w-72" data-i18n="sectionMyProjects">My Projects</p></div>
 
             <div class="grid grid-cols-[repeat(auto-fit,minmax(158px,1fr))] gap-3 p-4">
               <div class="flex flex-col gap-3 pb-3 reveal">
@@ -89,8 +90,8 @@
                   style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAnVKlpHWK50HNwuJ5we5Yz31lneTIKxUEo8molzK8VQYfSynZhZgpEVUerlqhsqC9c0Fk_qP8TIItnpb_j9Kfv72fOPHRwOUzHNcaPUuoGcoSaSuR5RD0ld3K0qYQLxkNJY9Fded-5xCN5nJH4cYLxEFzFrxpNi1ZMRgvUxnvA08DDNN49et9gW5XXLPs_hsT2loRyFOxs97k2-JvD0OgRePuFP14mlGBbZDmbMZlF1YPjylg-WagyGTz99KtASPbMdBULuu-MYlA");'
                 ></div>
                 <div>
-                  <p class="text-white text-base font-medium leading-normal">Project Alpha</p>
-                  <p class="text-[#9daebe] text-sm font-normal leading-normal">A short film exploring themes of isolation and connection.</p>
+                  <p data-i18n="projectAlphaTitle" class="text-white text-base font-medium leading-normal">Project Alpha</p>
+                  <p data-i18n="projectAlphaDesc" class="text-[#9daebe] text-sm font-normal leading-normal">A short film exploring themes of isolation and connection.</p>
                 </div>
               </div>
               <div class="flex flex-col gap-3 pb-3 reveal">
@@ -99,8 +100,8 @@
                   style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuC3bBEqHnPhRcwqpvS5e1C527L6NcMvThZVyVBY4BZjUsw4ne3M5kX68P08yn1K3STDJHKIge5cXoNJnihbzY_s__kPZCGqLzHuD3CPKYBRipGiOW-e2U97kvxY8NFf0uXNxyqTL_C59DX__p1rQ-RqWyE32d1JhronkS4Cosbsh4dXDDLpLTLrspvmZUQ4FtliA0xOpJW8dEe3pw-nC_Klj1koSM62m71xsAN0uf2E65zRMThHuZIYHMYumrF3ipZZNLQLv9dctzw");'
                 ></div>
                 <div>
-                  <p class="text-white text-base font-medium leading-normal">Project Beta</p>
-                  <p class="text-[#9daebe] text-sm font-normal leading-normal">An interactive installation blending art and technology.</p>
+                  <p data-i18n="projectBetaTitle" class="text-white text-base font-medium leading-normal">Project Beta</p>
+                  <p data-i18n="projectBetaDesc" class="text-[#9daebe] text-sm font-normal leading-normal">An interactive installation blending art and technology.</p>
                 </div>
               </div>
               <div class="flex flex-col gap-3 pb-3 reveal">
@@ -109,58 +110,56 @@
                   style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuA2bCnO-iNWPk7KVb7CH97OWwC2Jaq-4HJIxtgxG6ApvoaR55xBrJulhQto4_uGe3zc_4oyYQxCXyjC0JmJupvS3E8hCDMXP6DhJ1w7FtsHkmy2dLA_XI6FqDN1fJsaHAZrOiCfDxaMdn7f5ahmZwVswcnkbm7fX9Y43V_i7ke5egfVh1YMgDCLZ5-57j2GgHi4VrPeaGpFVgO4-uVA0qIkw4HzfPOIs3rTGIhsiDgOuofTK-59xBy3VFDcR9uyeji3inAiguFcjLE");'
                 ></div>
                 <div>
-                  <p class="text-white text-base font-medium leading-normal">Project Gamma</p>
-                  <p class="text-[#9daebe] text-sm font-normal leading-normal">A documentary capturing the essence of urban life.</p>
+                  <p data-i18n="projectGammaTitle" class="text-white text-base font-medium leading-normal">Project Gamma</p>
+                  <p data-i18n="projectGammaDesc" class="text-[#9daebe] text-sm font-normal leading-normal">A documentary capturing the essence of urban life.</p>
                 </div>
               </div>
             </div>
 
-            <h2 class="text-white text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5 reveal">About Me</h2>
-            <p class="text-white text-base font-normal leading-normal pb-3 pt-1 px-4 reveal">
-
+            <h2 data-i18n="aboutHeading" class="text-white text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">About Me</h2>
+            <p data-i18n="aboutParagraph" class="text-white text-base font-normal leading-normal pb-3 pt-1 px-4">
               I am a filmmaker and artist passionate about creating impactful visual experiences. My work spans various mediums, from short films to interactive installations,
               always aiming to tell compelling stories and evoke emotions.
             </p>
-            <h2 class="text-white text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5 reveal">Technologies</h2>
-            <div class="flex gap-3 p-3 flex-wrap pr-4 reveal">
+            <h2 data-i18n="technologiesHeading" class="text-white text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">Technologies</h2>
+            <div class="flex gap-3 p-3 flex-wrap pr-4">
               <div class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-full bg-[#2b3640] pl-4 pr-4">
-                <p class="text-white text-sm font-medium leading-normal">Video Editing</p>
+                <p data-i18n="techVideoEditing" class="text-white text-sm font-medium leading-normal">Video Editing</p>
               </div>
               <div class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-full bg-[#2b3640] pl-4 pr-4">
-                <p class="text-white text-sm font-medium leading-normal">3D Animation</p>
+                <p data-i18n="tech3DAnimation" class="text-white text-sm font-medium leading-normal">3D Animation</p>
               </div>
               <div class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-full bg-[#2b3640] pl-4 pr-4">
-                <p class="text-white text-sm font-medium leading-normal">Motion Graphics</p>
+                <p data-i18n="techMotionGraphics" class="text-white text-sm font-medium leading-normal">Motion Graphics</p>
               </div>
               <div class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-full bg-[#2b3640] pl-4 pr-4">
-                <p class="text-white text-sm font-medium leading-normal">Interactive Design</p>
+                <p data-i18n="techInteractiveDesign" class="text-white text-sm font-medium leading-normal">Interactive Design</p>
               </div>
               <div class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-full bg-[#2b3640] pl-4 pr-4">
-                <p class="text-white text-sm font-medium leading-normal">Documentary Filmmaking</p>
-              </div>
-            </div>
-            <h2 class="text-white text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5 reveal">Soft Skills</h2>
-            <div class="flex gap-3 p-3 flex-wrap pr-4 reveal">
-              <div class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-full bg-[#2b3640] pl-4 pr-4">
-                <p class="text-white text-sm font-medium leading-normal">Storytelling</p>
-              </div>
-              <div class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-full bg-[#2b3640] pl-4 pr-4">
-                <p class="text-white text-sm font-medium leading-normal">Visual Communication</p>
-              </div>
-              <div class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-full bg-[#2b3640] pl-4 pr-4">
-                <p class="text-white text-sm font-medium leading-normal">Collaboration</p>
-              </div>
-              <div class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-full bg-[#2b3640] pl-4 pr-4">
-                <p class="text-white text-sm font-medium leading-normal">Problem-Solving</p>
-              </div>
-              <div class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-full bg-[#2b3640] pl-4 pr-4">
-                <p class="text-white text-sm font-medium leading-normal">Adaptability</p>
+                <p data-i18n="techDocumentary" class="text-white text-sm font-medium leading-normal">Documentary Filmmaking</p>
               </div>
             </div>
 
-            <h2 class="text-white text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5 reveal">Contact</h2>
-            <p class="text-white text-base font-normal leading-normal pb-3 pt-1 px-4 reveal">
-
+            <h2 data-i18n="softSkillsHeading" class="text-white text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">Soft Skills</h2>
+            <div class="flex gap-3 p-3 flex-wrap pr-4">
+              <div class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-full bg-[#2b3640] pl-4 pr-4">
+                <p data-i18n="skillStorytelling" class="text-white text-sm font-medium leading-normal">Storytelling</p>
+              </div>
+              <div class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-full bg-[#2b3640] pl-4 pr-4">
+                <p data-i18n="skillVisualCommunication" class="text-white text-sm font-medium leading-normal">Visual Communication</p>
+              </div>
+              <div class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-full bg-[#2b3640] pl-4 pr-4">
+                <p data-i18n="skillCollaboration" class="text-white text-sm font-medium leading-normal">Collaboration</p>
+              </div>
+              <div class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-full bg-[#2b3640] pl-4 pr-4">
+                <p data-i18n="skillProblemSolving" class="text-white text-sm font-medium leading-normal">Problem-Solving</p>
+              </div>
+              <div class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-full bg-[#2b3640] pl-4 pr-4">
+                <p data-i18n="skillAdaptability" class="text-white text-sm font-medium leading-normal">Adaptability</p>
+              </div>
+            </div>
+            <h2 data-i18n="contactHeading" class="text-white text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">Contact</h2>
+            <p data-i18n="contactParagraph" class="text-white text-base font-normal leading-normal pb-3 pt-1 px-4">
               Get in touch to discuss potential collaborations or projects. You can reach me at email@example.com or connect on social media.
             </p>
             <div class="@container reveal">
@@ -175,7 +174,7 @@
                       </svg>
                     </div>
                   </div>
-                  <p class="text-white text-sm font-medium leading-normal">LinkedIn</p>
+                  <p data-i18n="socialLinkedIn" class="text-white text-sm font-medium leading-normal">LinkedIn</p>
                 </div>
                 <div class="flex flex-col items-center gap-2 bg-[#141a1f] py-2.5 text-center w-20">
                   <div class="rounded-full bg-[#2b3640] p-2.5">
@@ -187,7 +186,7 @@
                       </svg>
                     </div>
                   </div>
-                  <p class="text-white text-sm font-medium leading-normal">GitHub</p>
+                  <p data-i18n="socialGitHub" class="text-white text-sm font-medium leading-normal">GitHub</p>
                 </div>
               </div>
             </div>
@@ -196,19 +195,91 @@
       </div>
     </div>
   <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const observer = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('reveal-visible');
-            observer.unobserve(entry.target);
-          }
-        });
-      }, { threshold: 0.1 });
+    
+const translations = {
+  en: {
+    languageButton: "Language: EN",
+    navProjects: "Projects",
+    navAbout: "About",
+    navContact: "Contact",
+    sectionMyProjects: "My Projects",
+    projectAlphaTitle: "Project Alpha",
+    projectAlphaDesc: "A short film exploring themes of isolation and connection.",
+    projectBetaTitle: "Project Beta",
+    projectBetaDesc: "An interactive installation blending art and technology.",
+    projectGammaTitle: "Project Gamma",
+    projectGammaDesc: "A documentary capturing the essence of urban life.",
+    aboutHeading: "About Me",
+    aboutParagraph: "I am a filmmaker and artist passionate about creating impactful visual experiences. My work spans various mediums, from short films to interactive installations, always aiming to tell compelling stories and evoke emotions.",
+    technologiesHeading: "Technologies",
+    techVideoEditing: "Video Editing",
+    tech3DAnimation: "3D Animation",
+    techMotionGraphics: "Motion Graphics",
+    techInteractiveDesign: "Interactive Design",
+    techDocumentary: "Documentary Filmmaking",
+    softSkillsHeading: "Soft Skills",
+    skillStorytelling: "Storytelling",
+    skillVisualCommunication: "Visual Communication",
+    skillCollaboration: "Collaboration",
+    skillProblemSolving: "Problem-Solving",
+    skillAdaptability: "Adaptability",
+    contactHeading: "Contact",
+    contactParagraph: "Get in touch to discuss potential collaborations or projects. You can reach me at email@example.com or connect on social media.",
+    socialLinkedIn: "LinkedIn",
+    socialGitHub: "GitHub"
+  },
+  es: {
+    languageButton: "Idioma: ES",
+    navProjects: "Proyectos",
+    navAbout: "Acerca de",
+    navContact: "Contacto",
+    sectionMyProjects: "Mis Proyectos",
+    projectAlphaTitle: "Proyecto Alfa",
+    projectAlphaDesc: "Un cortometraje que explora temas de aislamiento y conexión.",
+    projectBetaTitle: "Proyecto Beta",
+    projectBetaDesc: "Una instalación interactiva que combina arte y tecnología.",
+    projectGammaTitle: "Proyecto Gamma",
+    projectGammaDesc: "Un documental que captura la esencia de la vida urbana.",
+    aboutHeading: "Sobre mí",
+    aboutParagraph: "Soy cineasta y artista apasionado por crear experiencias visuales impactantes. Mi trabajo abarca varios medios, desde cortometrajes hasta instalaciones interactivas, siempre buscando contar historias que conmuevan.",
+    technologiesHeading: "Tecnologías",
+    techVideoEditing: "Edición de video",
+    tech3DAnimation: "Animación 3D",
+    techMotionGraphics: "Gráficos en movimiento",
+    techInteractiveDesign: "Diseño interactivo",
+    techDocumentary: "Realización documental",
+    softSkillsHeading: "Habilidades blandas",
+    skillStorytelling: "Narración",
+    skillVisualCommunication: "Comunicación visual",
+    skillCollaboration: "Colaboración",
+    skillProblemSolving: "Resolución de problemas",
+    skillAdaptability: "Adaptabilidad",
+    contactHeading: "Contacto",
+    contactParagraph: "Ponte en contacto para hablar sobre posibles colaboraciones o proyectos. Puedes escribirme a email@example.com o conectar en redes sociales.",
+    socialLinkedIn: "LinkedIn",
+    socialGitHub: "GitHub"
+  }
+};
 
-      document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-    });
-  </script>
+function applyTranslations(lang) {
+  document.documentElement.lang = lang;
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    if (translations[lang][key]) {
+      el.textContent = translations[lang][key];
+    }
+  });
+  localStorage.setItem('lang', lang);
+}
 
-  </body>
+document.getElementById('language-btn').addEventListener('click', () => {
+  const current = document.documentElement.lang === 'es' ? 'es' : 'en';
+  const next = current === 'en' ? 'es' : 'en';
+  applyTranslations(next);
+});
+
+applyTranslations(localStorage.getItem('lang') || 'en');
+
+</script>
+</body>
 </html>
