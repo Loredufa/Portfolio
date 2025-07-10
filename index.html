@@ -1,287 +1,237 @@
-<html>
+<html lang="en">
   <head>
-    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin />
     <link
       rel="stylesheet"
       as="style"
       onload="this.rel='stylesheet'"
-      href="https://fonts.googleapis.com/css2?display=swap&amp;family=Manrope%3Awght%40400%3B500%3B700%3B800&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900"
+      href="https://fonts.googleapis.com/css2?display=swap&family=Manrope:wght@400;500;700;800&family=Noto+Sans:wght@400;500;700;900"
     />
 
-  <title>Stitch Design</title>
-  <link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNk+A8AAwUB9EXX1iAAAAAASUVORK5CYII=" />
+    <title>Portfolio</title>
+    <!-- Favicon 32×32 -->
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/Logo-dark.png" />
 
-  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-  <style>
-    .reveal {
-      opacity: 0;
-      transform: translateY(20px);
-      transition: opacity 0.7s ease-out, transform 0.7s ease-out;
-    }
-    .reveal-visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-    .video-hover {
-      transition: transform 0.5s ease-out;
-    }
-    .video-hover:hover {
-      transform: scale(1.05);
-    }
-  </style>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 
+    <style>
+      /* ----------  Animaciones y efectos ---------- */
+      .reveal {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+      }
+      .reveal-visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      /* Hover con movimiento para imágenes */
+      .video-hover {
+        transition: transform 0.5s ease-out;
+      }
+      .video-hover:hover {
+        transform: scale(1.05) translateY(-8px);
+      }
+
+      /* Efecto para etiquetas de tecnologías/habilidades */
+      .tech-tag {
+        transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+      }
+      .tech-tag:hover {
+        transform: translateY(-4px) scale(1.05);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        background-color: #3b4a58;
+      }
+
+      /* Tooltip para el botón copiar */
+      #copy-msg {
+        position: absolute;
+        top: -28px;
+        right: 0;
+        background: #2b3640;
+        color: white;
+        padding: 4px 8px;
+        border-radius: 6px;
+        font-size: 12px;
+        opacity: 0;
+        transform: translateY(5px);
+        pointer-events: none;
+        transition: opacity 0.3s ease, transform 0.3s ease;
+      }
+      #copy-msg.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      /* ----------  Navegación hover ---------- */
+      .nav-link {
+        position: relative;
+        transition: color 0.3s ease, transform 0.3s ease;
+      }
+      .nav-link:hover {
+        color: #8ab4ff;
+        transform: translateY(-2px);
+      }
+      .nav-link::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -4px;
+        width: 0;
+        height: 2px;
+        background: currentColor;
+        transition: width 0.3s ease;
+      }
+      .nav-link:hover::after {
+        width: 100%;
+      }
+
+      /* botón hover (lenguaje) */
+      .btn-hover {
+        transition: transform 0.3s ease;
+      }
+      .btn-hover:hover {
+        transform: scale(1.05);
+      }
+    </style>
   </head>
-  <body>
-    <div class="relative flex size-full min-h-screen flex-col bg-[#141a1f] dark group/design-root overflow-x-hidden" style='font-family: Manrope, "Noto Sans", sans-serif;'>
+  <body class="bg-[#141a1f] text-white" style="font-family: Manrope, 'Noto Sans', sans-serif">
+    <div class="relative flex min-h-screen flex-col overflow-x-hidden">
       <div class="layout-container flex h-full grow flex-col">
-        <header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#2b3640] px-10 py-3">
-          <div class="flex items-center gap-4 text-white">
+        <!-- Header ------------------------------------------------------------------ -->
+        <header
+          class="flex items-center justify-between whitespace-nowrap border-b border-[#2b3640] px-4 py-3 sm:px-6 lg:px-10"
+        >
+          <div class="flex items-center gap-4">
             <div class="size-4">
-              <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g clip-path="url(#clip0_6_319)">
                   <path
                     d="M8.57829 8.57829C5.52816 11.6284 3.451 15.5145 2.60947 19.7452C1.76794 23.9758 2.19984 28.361 3.85056 32.3462C5.50128 36.3314 8.29667 39.7376 11.8832 42.134C15.4698 44.5305 19.6865 45.8096 24 45.8096C28.3135 45.8096 32.5302 44.5305 36.1168 42.134C39.7033 39.7375 42.4987 36.3314 44.1494 32.3462C45.8002 28.361 46.2321 23.9758 45.3905 19.7452C44.549 15.5145 42.4718 11.6284 39.4217 8.57829L24 24L8.57829 8.57829Z"
                     fill="currentColor"
-                  ></path>
+                  />
                 </g>
                 <defs>
-                  <clipPath id="clip0_6_319"><rect width="48" height="48" fill="white"></rect></clipPath>
+                  <clipPath id="clip0_6_319"><rect width="48" height="48" fill="white" /></clipPath>
                 </defs>
               </svg>
             </div>
-            <h2 class="text-white text-lg font-bold leading-tight tracking-[-0.015em]">Portfolio</h2>
+            <h2 class="text-lg font-bold leading-tight tracking-[-0.015em]">Lorena Dufaur</h2>
           </div>
-          <div class="flex flex-1 justify-end gap-8">
-            <div class="flex items-center gap-9">
-              <a data-i18n="navProjects" class="text-white text-sm font-medium leading-normal" href="#">Projects</a>
-              <a data-i18n="navAbout" class="text-white text-sm font-medium leading-normal" href="#">About</a>
-              <a data-i18n="navContact" class="text-white text-sm font-medium leading-normal" href="#">Contact</a>
-            </div>
-            <button id="language-btn"
-              class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-full h-10 px-4 bg-[#2b3640] text-white text-sm font-bold leading-normal tracking-[0.015em]"
+          <div class="flex flex-1 justify-end gap-6 sm:gap-8">
+            <nav class="hidden items-center gap-6 sm:flex lg:gap-9">
+              <a data-i18n="navProjects" class="nav-link text-sm font-medium" href="#projects">Projects</a>
+              <a data-i18n="navAbout" class="nav-link text-sm font-medium" href="#about">About</a>
+              <a data-i18n="navContact" class="nav-link text-sm font-medium" href="#contact">Contact</a>
+            </nav>
+            <button
+              id="language-btn"
+              class="btn-hover flex h-10 min-w-[100px] items-center justify-center rounded-full bg-[#2b3640] px-4 text-sm font-bold tracking-[0.015em]"
             >
-              <span data-i18n="languageButton" class="truncate">Language: EN</span>
+              <span data-i18n="languageButton" class="truncate">Language: ES</span>
             </button>
           </div>
         </header>
-        <div class="px-40 flex flex-1 justify-center py-5">
-          <div class="layout-content-container flex flex-col max-w-[960px] flex-1">
-            <div
-              class="relative flex items-center justify-center bg-[#dce8f3] bg-cover bg-center aspect-video video-hover reveal"
-              style='background-image: url("https://images.unsplash.com/photo-1519677100203-a0e668c92439");'
-            >
-              <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank">
-                <button class="flex shrink-0 items-center justify-center rounded-full size-16 bg-black/40 text-white">
-                  <div class="text-inherit" data-icon="Play" data-size="24px" data-weight="fill">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" fill="currentColor" viewBox="0 0 256 256">
-                      <path
-                        d="M240,128a15.74,15.74,0,0,1-7.6,13.51L88.32,229.65a16,16,0,0,1-16.2.3A15.86,15.86,0,0,1,64,216.13V39.87a15.86,15.86,0,0,1,8.12-13.82,16,16,0,0,1,16.2.3L232.4,114.49A15.74,15.74,0,0,1,240,128Z"
-                      ></path>
-                    </svg>
+
+        <!-- Contenido principal ------------------------------------------------------ -->
+        <main class="flex flex-1 justify-center px-4 py-6 sm:px-6 lg:px-40">
+          <div class="layout-content-container flex w-full max-w-[960px] flex-col">
+            <!-- Hero vídeo -->
+            <section class="reveal" id="hero">
+              <div
+                class="video-hover relative flex aspect-video items-center justify-center bg-cover bg-center bg-[#dce8f3]"
+                style="background-image:url('https://lh3.googleusercontent.com/aida-public/AB6AXuCkzgozgAGOwETPl0s_vCBh3R32_f_5yk_K_b5pwQE0OGPmCbaWW_Dgwp8YLcghFhOGaXDG2GRcZMexK5-O-gejT9kZVSpQO4p3kG4jBhaVTJpdCssO3iWKSIJz5p67KrT4xFZls3wbAAIU2hFYGpOP0X-zhiltYf5gg2Y6lNyAbsRtFdtEG86yvzvPaeozEhBKU2YF8kj-1fygEsgha30tmi4GAo3Mj_eXAhAyPLsuP6Lp93kv5lqPd262vyz8Ymdy4uDJ2V58jPA');"
+              >
+                <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank">
+                  <button class="size-16 flex shrink-0 items-center justify-center rounded-full bg-black/40 text-white">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 256 256" fill="currentColor"><path d="M240 128a15.74 15.74 0 0 1-7.6 13.51L88.32 229.65A16 16 0 0 1 64 216.13V39.87A15.86 15.86 0 0 1 88.32 26.36L232.4 114.49A15.74 15.74 0 0 1 240 128Z"/></svg>
+                  </button>
+                </a>
+              </div>
+            </section>
+
+            <!-- Projects -->
+            <section id="projects" class="pt-8">
+              <div class="flex flex-wrap items-end justify-between gap-3 p-2 sm:p-4">
+                <h3 class="reveal min-w-48 text-2xl font-bold tracking-tight sm:text-3xl md:text-4xl" data-i18n="sectionMyProjects">My Projects</h3>
+              </div>
+              <div class="grid gap-3 p-2 sm:p-4 [grid-template-columns:repeat(auto-fit,minmax(160px,1fr))]">
+                <!-- Card 1 -->
+                <div class="reveal flex flex-col gap-3 pb-3">
+                  <div class="video-hover aspect-video w-full rounded-xl bg-cover bg-center bg-no-repeat" style="background-image:url('https://lh3.googleusercontent.com/aida-public/AB6AXuAnVKlpHWK50HNwuJ5we5Yz31lneTIKxUEo8molzK8VQYfSynZhZgpEVUerlqhsqC9c0Fk_qP8TIItnpb_j9Kfv72fOPHRwOUzHNcaPUuoGcoSaSuR5RD0ld3K0qYQLxkNJY9Fded-5xCN5nJH4cYLxEFzFrxpNi1ZMRgvUxnvA08DDNN49et9gW5XXLPs_hsT2loRyFOxs97k2-JvD0OgRePuFP14mlGBbZDmbMZlF1YPjylg-WagyGTz99KtASPbMdBULuu-MYlA');"></div>
+                  <div>
+                    <p class="text-base font-medium" data-i18n="projectAlphaTitle">Project Alpha</p>
+                    <p class="text-sm text-[#9daebe]" data-i18n="projectAlphaDesc">A short film exploring themes of isolation and connection.</p>
                   </div>
-                </button>
-              </a>
-            </div>
-
-            <div class="flex flex-wrap justify-between gap-3 p-4"><p class="text-white tracking-light text-[32px] font-bold leading-tight min-w-72" data-i18n="sectionMyProjects">My Projects</p></div>
-
-            <div class="grid grid-cols-[repeat(auto-fit,minmax(158px,1fr))] gap-3 p-4">
-              <div class="flex flex-col gap-3 pb-3 reveal">
-                <div
-                  class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-xl video-hover"
-                  style='background-image: url("https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e");'
-                ></div>
-                <div>
-                  <p data-i18n="projectAlphaTitle" class="text-white text-base font-medium leading-normal">Project Alpha</p>
-                  <p data-i18n="projectAlphaDesc" class="text-[#9daebe] text-sm font-normal leading-normal">A short film exploring themes of isolation and connection.</p>
                 </div>
-              </div>
-              <div class="flex flex-col gap-3 pb-3 reveal">
-                <div
-                  class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-xl video-hover"
-                  style='background-image: url("https://images.unsplash.com/photo-1504198453319-5ce911bafcde");'
-                ></div>
-                <div>
-                  <p data-i18n="projectBetaTitle" class="text-white text-base font-medium leading-normal">Project Beta</p>
-                  <p data-i18n="projectBetaDesc" class="text-[#9daebe] text-sm font-normal leading-normal">An interactive installation blending art and technology.</p>
-                </div>
-              </div>
-              <div class="flex flex-col gap-3 pb-3 reveal">
-                <div
-                  class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-xl video-hover"
-                  style='background-image: url("https://images.unsplash.com/photo-1472214103451-9374bd1c798e");'
-                ></div>
-                <div>
-                  <p data-i18n="projectGammaTitle" class="text-white text-base font-medium leading-normal">Project Gamma</p>
-                  <p data-i18n="projectGammaDesc" class="text-[#9daebe] text-sm font-normal leading-normal">A documentary capturing the essence of urban life.</p>
-                </div>
-              </div>
-            </div>
-
-            <h2 data-i18n="aboutHeading" class="text-white text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">About Me</h2>
-            <p data-i18n="aboutParagraph" class="text-white text-base font-normal leading-normal pb-3 pt-1 px-4">
-              I am a filmmaker and artist passionate about creating impactful visual experiences. My work spans various mediums, from short films to interactive installations,
-              always aiming to tell compelling stories and evoke emotions.
-            </p>
-            <h2 data-i18n="technologiesHeading" class="text-white text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">Technologies</h2>
-            <div class="flex gap-3 p-3 flex-wrap pr-4">
-              <div class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-full bg-[#2b3640] pl-4 pr-4">
-                <p data-i18n="techVideoEditing" class="text-white text-sm font-medium leading-normal">Video Editing</p>
-              </div>
-              <div class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-full bg-[#2b3640] pl-4 pr-4">
-                <p data-i18n="tech3DAnimation" class="text-white text-sm font-medium leading-normal">3D Animation</p>
-              </div>
-              <div class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-full bg-[#2b3640] pl-4 pr-4">
-                <p data-i18n="techMotionGraphics" class="text-white text-sm font-medium leading-normal">Motion Graphics</p>
-              </div>
-              <div class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-full bg-[#2b3640] pl-4 pr-4">
-                <p data-i18n="techInteractiveDesign" class="text-white text-sm font-medium leading-normal">Interactive Design</p>
-              </div>
-              <div class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-full bg-[#2b3640] pl-4 pr-4">
-                <p data-i18n="techDocumentary" class="text-white text-sm font-medium leading-normal">Documentary Filmmaking</p>
-              </div>
-            </div>
-
-            <h2 data-i18n="softSkillsHeading" class="text-white text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">Soft Skills</h2>
-            <div class="flex gap-3 p-3 flex-wrap pr-4">
-              <div class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-full bg-[#2b3640] pl-4 pr-4">
-                <p data-i18n="skillStorytelling" class="text-white text-sm font-medium leading-normal">Storytelling</p>
-              </div>
-              <div class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-full bg-[#2b3640] pl-4 pr-4">
-                <p data-i18n="skillVisualCommunication" class="text-white text-sm font-medium leading-normal">Visual Communication</p>
-              </div>
-              <div class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-full bg-[#2b3640] pl-4 pr-4">
-                <p data-i18n="skillCollaboration" class="text-white text-sm font-medium leading-normal">Collaboration</p>
-              </div>
-              <div class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-full bg-[#2b3640] pl-4 pr-4">
-                <p data-i18n="skillProblemSolving" class="text-white text-sm font-medium leading-normal">Problem-Solving</p>
-              </div>
-              <div class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-full bg-[#2b3640] pl-4 pr-4">
-                <p data-i18n="skillAdaptability" class="text-white text-sm font-medium leading-normal">Adaptability</p>
-              </div>
-            </div>
-            <h2 data-i18n="contactHeading" class="text-white text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">Contact</h2>
-            <p data-i18n="contactParagraph" class="text-white text-base font-normal leading-normal pb-3 pt-1 px-4">
-              Get in touch to discuss potential collaborations or projects. You can reach me at email@example.com or connect on social media.
-            </p>
-            <div class="@container reveal">
-              <div class="gap-2 px-4 flex flex-wrap justify-start">
-                <div class="flex flex-col items-center gap-2 bg-[#141a1f] py-2.5 text-center w-20">
-                  <div class="rounded-full bg-[#2b3640] p-2.5">
-                    <div class="text-white" data-icon="LinkedinLogo" data-size="20px" data-weight="regular">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor" viewBox="0 0 256 256">
-                        <path
-                          d="M216,24H40A16,16,0,0,0,24,40V216a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V40A16,16,0,0,0,216,24Zm0,192H40V40H216V216ZM96,112v64a8,8,0,0,1-16,0V112a8,8,0,0,1,16,0Zm88,28v36a8,8,0,0,1-16,0V140a20,20,0,0,0-40,0v36a8,8,0,0,1-16,0V112a8,8,0,0,1,15.79-1.78A36,36,0,0,1,184,140ZM100,84A12,12,0,1,1,88,72,12,12,0,0,1,100,84Z"
-                        ></path>
-                      </svg>
-                    </div>
+                <!-- Card 2 -->
+                <div class="reveal flex flex-col gap-3 pb-3">
+                  <div class="video-hover aspect-video w-full rounded-xl bg-cover bg-center bg-no-repeat" style="background-image:url('https://lh3.googleusercontent.com/aida-public/AB6AXuC3bBEqHnPhRcwqpvS5e1C527L6NcMvThZVyVBY4BZjUsw4ne3M5kX68P08yn1K3STDJHKIge5cXoNJnihbzY_s__kPZCGqLzHuD3CPKYBRipGiOW-e2U97kvxY8NFf0uXNxyqTL_C59DX__p1rQ-RqWyE32d1JhronkS4Cosbsh4dXDDLpLTLrspvmZUQ4FtliA0xOpJW8dEe3pw-nC_Klj1koSM62m71xsAN0uf2E65zRMThHuZIYHMYumrF3ipZZNLQLv9dctzw');"></div>
+                  <div>
+                    <p class="text-base font-medium" data-i18n="projectBetaTitle">Project Beta</p>
+                    <p class="text-sm text-[#9daebe]" data-i18n="projectBetaDesc">An interactive installation blending art and technology.</p>
                   </div>
-                  <p data-i18n="socialLinkedIn" class="text-white text-sm font-medium leading-normal">LinkedIn</p>
                 </div>
-                <div class="flex flex-col items-center gap-2 bg-[#141a1f] py-2.5 text-center w-20">
-                  <div class="rounded-full bg-[#2b3640] p-2.5">
-                    <div class="text-white" data-icon="GithubLogo" data-size="20px" data-weight="regular">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="20px" fill="currentColor" viewBox="0 0 256 256">
-                        <path
-                          d="M208.31,75.68A59.78,59.78,0,0,0,202.93,28,8,8,0,0,0,196,24a59.75,59.75,0,0,0-48,24H124A59.75,59.75,0,0,0,76,24a8,8,0,0,0-6.93,4,59.78,59.78,0,0,0-5.38,47.68A58.14,58.14,0,0,0,56,104v8a56.06,56.06,0,0,0,48.44,55.47A39.8,39.8,0,0,0,96,192v8H72a24,24,0,0,1-24-24A40,40,0,0,0,8,136a8,8,0,0,0,0,16,24,24,0,0,1,24,24,40,40,0,0,0,40,40H96v16a8,8,0,0,0,16,0V192a24,24,0,0,1,48,0v40a8,8,0,0,0,16,0V192a39.8,39.8,0,0,0-8.44-24.53A56.06,56.06,0,0,0,216,112v-8A58.14,58.14,0,0,0,208.31,75.68ZM200,112a40,40,0,0,1-40,40H112a40,40,0,0,1-40-40v-8a41.74,41.74,0,0,1,6.9-22.48A8,8,0,0,0,80,73.83a43.81,43.81,0,0,1,.79-33.58,43.88,43.88,0,0,1,32.32,20.06A8,8,0,0,0,119.82,64h32.35a8,8,0,0,0,6.74-3.69,43.87,43.87,0,0,1,32.32-20.06A43.81,43.81,0,0,1,192,73.83a8.09,8.09,0,0,0,1,7.65A41.72,41.72,0,0,1,200,104Z"
-                        ></path>
-                      </svg>
-                    </div>
+                <!-- Card 3 -->
+                <div class="reveal flex flex-col gap-3 pb-3">
+                  <div class="video-hover aspect-video w-full rounded-xl bg-cover bg-center bg-no-repeat" style="background-image:url('https://lh3.googleusercontent.com/aida-public/AB6AXuA2bCnO-iNWPk7KVb7CH97OWwC2Jaq-4HJIxtgxG6ApvoaR55xBrJulhQto4_uGe3zc_4oyYQxCXyjC0JmJupvS3E8hCDMXP6DhJ1w7FtsHkmy2dLA_XI6FqDN1fJsaHAZrOiCfDxaMdn7f5ahmZwVswcnkbm7fX9Y43V_i7ke5egfVh1YMgDCLZ5-57j2GgHi4VrPeaGpFVgO4-uVA0qIkw4HzfPOIs3rTGIhsiDgOuofTK-59xBy3VFDcR9uyeji3inAiguFcjLE');"></div>
+                  <div>
+                    <p class="text-base font-medium" data-i18n="projectGammaTitle">Project Gamma</p>
+                    <p class="text-sm text-[#9daebe]" data-i18n="projectGammaDesc">A documentary capturing the essence of urban life.</p>
                   </div>
-                  <p data-i18n="socialGitHub" class="text-white text-sm font-medium leading-normal">GitHub</p>
                 </div>
               </div>
-            </div>
+            </section>
+
+            <!-- About -->
+            <section id="about" class="pt-10">
+              <h3 class="reveal px-2 pb-2 pt-5 text-2xl font-bold tracking-tight sm:px-4 sm:pb-3 md:text-3xl" data-i18n="aboutHeading">About Me</h3>
+              <p class="reveal px-2 pb-3 pt-1 text-base font-normal leading-relaxed sm:px-4" data-i18n="aboutParagraph">I am a filmmaker and artist passionate about creating impactful visual experiences. My work spans various mediums, from short films to interactive installations, always aiming to tell compelling stories and evoke emotions.</p>
+            </section>
+
+            <!-- Technologies -->
+            <section class="pt-10">
+              <h3 class="reveal px-2 pb-2 text-2xl font-bold tracking-tight sm:px-4 sm:pb-3 md:text-3xl" data-i18n="technologiesHeading">Technologies & Skills</h3>
+              <div class="flex flex-wrap gap-3 p-2 sm:p-4">
+                <div class="tech-tag reveal flex h-8 shrink-0 items-center justify-center gap-2 rounded-full bg-[#2b3640] px-4"><span class="text-sm font-medium" data-i18n="techVideoEditing">Video Editing</span></div>
+                <div class="tech-tag reveal flex h-8 shrink-0 items-center justify-center gap-2 rounded-full bg-[#2b3640] px-4"><span class="text-sm font-medium" data-i18n="tech3DAnimation">3D Animation</span></div>
+                <div class="tech-tag reveal flex h-8 shrink-0 items-center justify-center gap-2 rounded-full bg-[#2b3640] px-4"><span class="text-sm font-medium" data-i18n="techSoundDesign">Sound Design</span></div>
+              </div>
+            </section>
+
+            <!-- Contact -->
+            <section id="contact" class="pt-10 pb-16">
+              <h3 class="reveal px-2 pb-2 text-2xl font-bold tracking-tight sm:px-4 sm:pb-3 md:text-3xl" data-i18n="contactHeading">Contact Me</h3>
+              <div class="relative px-2 sm:px-4">
+                <p class="reveal flex items-center gap-3 text-sm sm:text-base"><span id="email-text">hello@stitchdesign.com</span><button id="copy-email-btn" class="btn-hover relative flex size-7 items-center justify-center rounded-full bg-[#2b3640] transition-colors hover:bg-[#3b4a58]"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16"><path fill="currentColor" d="M16 1H4a2 2 0 0 0-2 2v14h2V3h12V1Zm3 4H8a2 2 0 0 0-2 2v16h13a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2ZM8 23V7h11v16H8Z"/></svg><span id="copy-msg">Copied!</span></button></p>
+              </div>
+            </section>
           </div>
-        </div>
+        </main>
       </div>
     </div>
-  <script>
-    
-const translations = {
-  en: {
-    languageButton: "Language: EN",
-    navProjects: "Projects",
-    navAbout: "About",
-    navContact: "Contact",
-    sectionMyProjects: "My Projects",
-    projectAlphaTitle: "Project Alpha",
-    projectAlphaDesc: "A short film exploring themes of isolation and connection.",
-    projectBetaTitle: "Project Beta",
-    projectBetaDesc: "An interactive installation blending art and technology.",
-    projectGammaTitle: "Project Gamma",
-    projectGammaDesc: "A documentary capturing the essence of urban life.",
-    aboutHeading: "About Me",
-    aboutParagraph: "I am a filmmaker and artist passionate about creating impactful visual experiences. My work spans various mediums, from short films to interactive installations, always aiming to tell compelling stories and evoke emotions.",
-    technologiesHeading: "Technologies",
-    techVideoEditing: "Video Editing",
-    tech3DAnimation: "3D Animation",
-    techMotionGraphics: "Motion Graphics",
-    techInteractiveDesign: "Interactive Design",
-    techDocumentary: "Documentary Filmmaking",
-    softSkillsHeading: "Soft Skills",
-    skillStorytelling: "Storytelling",
-    skillVisualCommunication: "Visual Communication",
-    skillCollaboration: "Collaboration",
-    skillProblemSolving: "Problem-Solving",
-    skillAdaptability: "Adaptability",
-    contactHeading: "Contact",
-    contactParagraph: "Get in touch to discuss potential collaborations or projects. You can reach me at email@example.com or connect on social media.",
-    socialLinkedIn: "LinkedIn",
-    socialGitHub: "GitHub"
-  },
-  es: {
-    languageButton: "Idioma: ES",
-    navProjects: "Proyectos",
-    navAbout: "Acerca de",
-    navContact: "Contacto",
-    sectionMyProjects: "Mis Proyectos",
-    projectAlphaTitle: "Proyecto Alfa",
-    projectAlphaDesc: "Un cortometraje que explora temas de aislamiento y conexión.",
-    projectBetaTitle: "Proyecto Beta",
-    projectBetaDesc: "Una instalación interactiva que combina arte y tecnología.",
-    projectGammaTitle: "Proyecto Gamma",
-    projectGammaDesc: "Un documental que captura la esencia de la vida urbana.",
-    aboutHeading: "Sobre mí",
-    aboutParagraph: "Soy cineasta y artista apasionado por crear experiencias visuales impactantes. Mi trabajo abarca varios medios, desde cortometrajes hasta instalaciones interactivas, siempre buscando contar historias que conmuevan.",
-    technologiesHeading: "Tecnologías",
-    techVideoEditing: "Edición de video",
-    tech3DAnimation: "Animación 3D",
-    techMotionGraphics: "Gráficos en movimiento",
-    techInteractiveDesign: "Diseño interactivo",
-    techDocumentary: "Realización documental",
-    softSkillsHeading: "Habilidades blandas",
-    skillStorytelling: "Narración",
-    skillVisualCommunication: "Comunicación visual",
-    skillCollaboration: "Colaboración",
-    skillProblemSolving: "Resolución de problemas",
-    skillAdaptability: "Adaptabilidad",
-    contactHeading: "Contacto",
-    contactParagraph: "Ponte en contacto para hablar sobre posibles colaboraciones o proyectos. Puedes escribirme a email@example.com o conectar en redes sociales.",
-    socialLinkedIn: "LinkedIn",
-    socialGitHub: "GitHub"
-  }
-};
 
-function applyTranslations(lang) {
-  document.documentElement.lang = lang;
-  document.querySelectorAll('[data-i18n]').forEach(el => {
-    const key = el.getAttribute('data-i18n');
-    if (translations[lang][key]) {
-      el.textContent = translations[lang][key];
-    }
-  });
-  localStorage.setItem('lang', lang);
-}
+    <!-- Scripts -->
+    <script>
+      /* Reveal on scroll */
+      const observer=new IntersectionObserver(entries=>{entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('reveal-visible');observer.unobserve(entry.target);}})},{threshold:0.1});document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
 
-document.getElementById('language-btn').addEventListener('click', () => {
-  const current = document.documentElement.lang === 'es' ? 'es' : 'en';
-  const next = current === 'en' ? 'es' : 'en';
-  applyTranslations(next);
-});
+      /* Copy email */
+      const copyBtn=document.getElementById('copy-email-btn');const copyMsg=document.getElementById('copy-msg');copyBtn.addEventListener('click',()=>{const email=document.getElementById('email-text').innerText.trim();navigator.clipboard.writeText(email).then(()=>{copyMsg.classList.add('visible');setTimeout(()=>copyMsg.classList.remove('visible'),2000);});});
 
-applyTranslations(localStorage.getItem('lang') || 'en');
-
-</script>
-</body>
+      /* Simple i18n toggle */
+      const translations={
+        en:{navProjects:'Projects',navAbout:'About',navContact:'Contact',languageButton:'Language: ES',sectionMyProjects:'My Projects',projectAlphaTitle:'Project Alpha',projectAlphaDesc:'A short film exploring themes of isolation and connection.',projectBetaTitle:'Project Beta',projectBetaDesc:'An interactive installation blending art and technology.',projectGammaTitle:'Project Gamma',projectGammaDesc:'A documentary capturing the essence of urban life.',aboutHeading:'About Me',aboutParagraph:'I am a filmmaker and artist passionate about creating impactful visual experiences. My work spans various mediums, from short films to interactive installations, always aiming to tell compelling stories and evoke emotions.',technologiesHeading:'Technologies & Skills',techVideoEditing:'Video Editing',tech3DAnimation:'3D Animation',techSoundDesign:'Sound Design',contactHeading:'Contact Me'},
+        es:{navProjects:'Proyectos',navAbout:'Acerca de',navContact:'Contacto',languageButton:'Idioma: EN',sectionMyProjects:'Mis Proyectos',projectAlphaTitle:'Proyecto Alpha',projectAlphaDesc:'Un cortometraje que explora temas de aislamiento y conexión.',projectBetaTitle:'Proyecto Beta',projectBetaDesc:'Una instalación interactiva que fusiona arte y tecnología.',projectGammaTitle:'Proyecto Gamma',projectGammaDesc:'Un documental que captura la esencia de la vida urbana.',aboutHeading:'Sobre mí',aboutParagraph:'Soy cineasta y artista apasionada por crear experiencias visuales impactantes. Mi trabajo abarca diversos medios, desde cortometrajes hasta instalaciones interactivas, siempre con el objetivo de contar historias conmovedoras y evocar emociones.',technologiesHeading:'Tecnologías y Habilidades',techVideoEditing:'Edición de Video',tech3DAnimation:'Animación 3D',techSoundDesign:'Diseño de Sonido',contactHeading:'Contáctame'}
+      };
+      let currentLang='en';
+      const langBtn=document.getElementById('language-btn');
+      function applyLang(lang){document.documentElement.lang=lang;document.querySelectorAll('[data-i18n]').forEach(el=>{const key=el.getAttribute('data-i18n');if(translations[lang][key])el.textContent=translations[lang][key];});}
+      applyLang(currentLang);
+      langBtn.addEventListener('click',()=>{currentLang=currentLang==='en'?'es':'en';applyLang(currentLang);const btnSpan=langBtn.querySelector('span');btnSpan.textContent=translations[currentLang].languageButton;});
+    </script>
+  </body>
 </html>
